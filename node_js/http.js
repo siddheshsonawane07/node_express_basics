@@ -11,7 +11,7 @@ const http = require('http');
 // import { createServer } from 'http';
 
 
-const server = createServer((req,res)=>{
+const server = http.createServer((req,res)=>{
 
     if(req.url === '/'){
         res.end("Welcome to our home page")
