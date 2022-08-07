@@ -20,6 +20,7 @@ const server = http.createServer((req,res)=>{
         res.write("<h1> Page not found</h1>")
         res.end()
     }
+    
 })
 
 
