@@ -7,9 +7,6 @@ The messages sent by the client, usually a Web browser, are called requests and 
 https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview
 */
 
-
-
-
 const http = require('http');
 // import { createServer } from 'http';
 

@@ -1,7 +1,7 @@
 /*
 A stream is an abstract interface for working with streaming data in Node.js. The node:stream module provides an API for implementing the stream interface.
 
-Types of streams#
+Types of streams
 There are four fundamental stream types within Node.js:
 
 Writable: streams to which data can be written (for example, fs.createWriteStream()).
