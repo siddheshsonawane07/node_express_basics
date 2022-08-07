@@ -18,17 +18,23 @@ app.get('/api/products',(req,res)=>{
 })
 
 //route parameters (placeholder)
-app.get('/api/products/:productsID',(req,res)=>{
+app.get('/api/products/:productID',(req,res)=>{
 
     //sending only id,name,image of the product
     const {productID} = req.params;
 
     const singleProduct = products.find((product)=> product.id === Number(productID))
+
+    if(!singleProduct){
+        return res.status(404).send("product does not exist")
+    }
+    
     res.json(singleProduct)
+    
 })  
 
 app.all('*',(req,res)=>{
-    res.statusCode(404).send("product not found")
+    res.status(404).send("product not found")
 })
 
 app.listen(5000,()=>{
