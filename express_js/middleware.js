@@ -24,7 +24,9 @@ const authorize = require('./authorize')
 // app.use('/api',logger)
 // '/api' is used for logger function to be applicable to all the woutes starting form /api
 
+
 app.use([logger,authorize])
+//multiple middleware functions are used
 
 app.get('/',(req,res)=>{
 
@@ -35,7 +37,6 @@ app.get('/about',(req,res)=>{
 
     res.send("About")
 })
-
 
 app.listen(5000,()=>{
     console.log("server is running on port 5000");
