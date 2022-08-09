@@ -6,6 +6,7 @@ Here the middleware function is logger which we use for keeping a log of http re
 const express = require('express')
 const app = express()
 const logger = require('./logger')
+const authorize = require('./authorize')
 
 // app.get('/',logger,(req,res)=>{
 
@@ -17,11 +18,13 @@ const logger = require('./logger')
 //     res.send("About")
 // })
 
-app.use(logger)
+// app.use(logger)
 //this enables the express to use logger function for all the routes without writing them in the app.get command
 
-app.use('/api',logger)
+// app.use('/api',logger)
 // '/api' is used for logger function to be applicable to all the woutes starting form /api
+
+app.use([logger,authorize])
 
 app.get('/',(req,res)=>{
 
