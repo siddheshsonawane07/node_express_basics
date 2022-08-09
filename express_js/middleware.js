@@ -7,16 +7,28 @@ const express = require('express')
 const app = express()
 const logger = require('./logger')
 
-app.get('/',logger,(req,res)=>{
+// app.get('/',logger,(req,res)=>{
+
+//     res.send('Home')
+// })
+
+// app.get('/about',logger,(req,res)=>{
+
+//     res.send("About")
+// })
+
+app.use(logger)
+//this enables the express to use logger function for all the routes without writing them in the app.get command
+
+app.get('/',(req,res)=>{
 
     res.send('Home')
 })
 
-app.get('/about',logger,(req,res)=>{
+app.get('/about',(req,res)=>{
 
     res.send("About")
 })
-
 
 
 app.listen(5000,()=>{
