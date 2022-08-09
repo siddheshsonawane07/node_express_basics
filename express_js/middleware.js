@@ -20,6 +20,9 @@ const logger = require('./logger')
 app.use(logger)
 //this enables the express to use logger function for all the routes without writing them in the app.get command
 
+app.use('/api',logger)
+// '/api' is used for logger function to be applicable to all the woutes starting form /api
+
 app.get('/',(req,res)=>{
 
     res.send('Home')
