@@ -1,8 +1,11 @@
-//req => middleware => res
-
+/*
+req => middleware => res
+Middleware functions are functions that have access to the request object (req), the response object (res), and the next function in the application’s request-response cycle. The next function is a function in the Express router which, when invoked, executes the middleware succeeding the current middleware.
+Here the middleware function is logger which we use for keeping a log of http requests
+*/
 const express = require('express')
 const app = express()
-
+const logger = require('./logger')
 
 app.get('/',logger,(req,res)=>{
 
@@ -11,6 +14,7 @@ app.get('/',logger,(req,res)=>{
 
 app.get('/about',logger,(req,res)=>{
 
+    res.send("About")
 })
 
 
